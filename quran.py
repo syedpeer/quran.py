@@ -31,16 +31,16 @@ class Quran:
       if line.startswith(location):
         return self.q_gen_output(i)
       i=i+1
-    return 'no result !'
+    return 'sorry no result !'
 
 
 
   def q_gen_output(self,line):
     output=''
-    i=0
+    i=len(self._q_lst)-1
     for q_file in self._q_lst:
       output = output+ '\n\n' + self.q_dict_path.keys()[i] + '\n' + q_file[line] 
-      i = i + 1
+      i = i - 1
 
     return output
 
@@ -50,7 +50,7 @@ class Quran:
     return len(self._q_lst[0])
 
 
-  def q_slice(self,aye):
+  def q_slice(self,ayah):
     pass
 
 
